@@ -217,13 +217,16 @@ async def get_candidate_resume(
         media_type = "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
 
     import os
-    if not os.path.exists(candidate.resume_path):
+    # Resolve relative path stored in DB to absolute path on current disk
+    abs_path = os.path.abspath(candidate.resume_path)
+    
+    if not os.path.exists(abs_path):
         raise HTTPException(status_code=404, detail="File missing on server")
 
     return FileResponse(
-        candidate.resume_path, 
+        abs_path, 
         media_type=media_type, 
-        filename=os.path.basename(candidate.resume_path),
+        filename=os.path.basename(abs_path),
         content_disposition_type="inline"
     )
 

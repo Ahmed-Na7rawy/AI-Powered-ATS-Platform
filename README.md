@@ -128,8 +128,16 @@ GEMINI_API_KEY=your_gemini_api_key_here
 
 ---
 
-##  Quick Start (Windows)
-For convenience, a `start_dev.bat` script is included in the root directory to simultaneously launch both the FastAPI backend and Vite frontend development servers.
-```cmd
-.\start_dev.bat
-```
+## 🚀 5. Cloud Deployment Checklist
+When moving to Render, Railway, or VPS:
+1. **Database:** Switch to a managed PostgreSQL (e.g., Supabase, Neon). Update `DATABASE_URL` in your env.
+2. **Storage:** Standard cloud restarts will wipe local files. Use a **Persistent Disk** on Render/Railway or integrate S3 storage.
+3. **CORS:** Update `ALLOWED_ORIGINS_STR` in your cloud env to include your Netlify/Vercel URL.
+4. **OCR:** Use the provided `Dockerfile` to ensure Tesseract and Poppler are available.
+5. **Background Tasks:** Ensure a Redis instance is running and `REDIS_URL` is configured for Celery.
+
+---
+
+## 🛠️ Development Tools
+- **start_dev.bat:** Run locally on Windows to spin up both servers.
+- **scripts/seed_db.py:** Populate your local environment with test data.

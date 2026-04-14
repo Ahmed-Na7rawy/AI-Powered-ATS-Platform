@@ -30,4 +30,5 @@ async def save_resume_file(file: UploadFile, company_id: uuid.UUID) -> str:
     with open(file_path, "wb") as f:
         f.write(content)
         
-    return file_path
+    # Return the relative path for database storage
+    return os.path.join(RESUME_STORAGE_DIR, file_name).replace("\\", "/")
