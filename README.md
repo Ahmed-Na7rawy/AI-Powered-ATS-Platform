@@ -6,7 +6,7 @@
 
 ---
 
-## ✨ Features
+##  Features
 - **AI Resume Screening:** Automatic scoring (0-100%) and summarization of candidates based on specific job descriptions.
 - **Robust Document Parsing:** Native text extraction for PDF/Docx with automatic **OCR Fallback** for scanned/image-based resumes.
 - **Multi-Tenant User Management:** Complete recruiter dashboard for inviting teammates, managing roles, and deactivating accounts.
@@ -23,7 +23,7 @@ Before you begin, ensure you have the following installed:
 
 ---
 
-## 🏗️ 1. Infrastructure Setup (Docker Compose)
+##  1. Infrastructure Setup (Docker Compose)
 
 The application utilizes Docker to quickly spin up the required PostgreSQL and Redis services (Redis is required for Celery workers).
 
@@ -39,7 +39,7 @@ The application utilizes Docker to quickly spin up the required PostgreSQL and R
 
 ---
 
-## ⚙️ 2. Environment Variables
+##  2. Environment Variables
 
 Create a file named `.env` in the root directory (where `main.py` or the `app` folder resides) and configure the following required environment variables:
 
@@ -60,7 +60,7 @@ GEMINI_API_KEY=your_gemini_api_key_here
 
 ---
 
-## 🐍 3. Backend Setup (FastAPI & Celery)
+##  3. Backend Setup (FastAPI & Celery)
 
 1. **Set up a Python Virtual Environment:**
    ```bash
@@ -102,7 +102,7 @@ GEMINI_API_KEY=your_gemini_api_key_here
 
 ---
 
-## ⚛️ 4. Frontend Setup (React/Vite)
+##  4. Frontend Setup (React/Vite)
 
 1. **Navigate to the frontend directory:**
    ```bash
@@ -128,7 +128,7 @@ GEMINI_API_KEY=your_gemini_api_key_here
 
 ---
 
-## 🚀 Quick Start (Windows)
+##  Quick Start (Windows)
 For convenience, a `start_dev.bat` script is included in the root directory to simultaneously launch both the FastAPI backend and Vite frontend development servers.
 ```cmd
 .\start_dev.bat
