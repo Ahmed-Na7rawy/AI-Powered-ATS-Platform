@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-textPrimary antialiased min-h-screen selection:bg-brand selection:text-white;
+  }
+}
+
+@layer components {
+  /* Minimal glass or high-contrast cards */
+  .glass-card {
+    @apply bg-surface border border-border rounded-xl shadow-lg backdrop-blur-sm px-6 py-5;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-2 bg-background border border-border rounded-lg text-textPrimary focus:outline-none focus:border-brand transition-colors text-sm;
+  }
+
+  .btn-primary {
+    @apply bg-brand hover:bg-brandHover text-white font-semibold py-2 px-4 rounded-lg transition-transform transform hover:-translate-y-[1px] shadow-sm;
+  }
+
+  .btn-secondary {
+    @apply bg-surface hover:bg-border text-textPrimary font-semibold py-2 px-4 rounded-lg border border-border transition-colors shadow-sm;
+  }
+  
+  .btn-danger {
+    @apply bg-danger hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors shadow-sm;
+  }
+
+  /* Distinct color-coded badges for statuses */
+  .status-badge {
+    @apply text-xs font-semibold px-2.5 py-1 rounded-full tracking-wide uppercase;
+  }
+  .status-applied { @apply bg-blue-500/20 text-blue-400 border border-blue-500/30; }
+  .status-reviewing { @apply bg-yellow-500/20 text-yellow-400 border border-yellow-500/30; }
+  .status-interview { @apply bg-purple-500/20 text-purple-400 border border-purple-500/30; }
+  .status-rejected { @apply bg-red-500/20 text-red-400 border border-red-500/30; }
+  .status-hired { @apply bg-green-500/20 text-green-400 border border-green-500/30; }
+}
+
+/* Subtle micro animations */
+.hover-scale { 
+  @apply transition-transform duration-200 hover:scale-[1.02]; 
+}
+
+/* Layout classes */
+.flex-center { 
+  @apply flex items-center justify-center; 
+}
